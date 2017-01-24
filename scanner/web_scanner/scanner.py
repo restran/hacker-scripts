@@ -30,7 +30,7 @@ import validators
 
 # 把项目的目录加入的环境变量中，这样才可以导入 common.base
 sys.path.insert(1, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from common.base import read_dict
+from common.base import read_dict, utf8
 
 logger = logging.getLogger(__name__)
 
@@ -121,6 +121,7 @@ class AsyncHTTPExecutor(object):
                 HTTPRequest(url=url,
                             method=method,
                             body=body,
+                            validate_cert=False,
                             decompress_response=True,
                             connect_timeout=self.timeout,
                             request_timeout=self.timeout,
@@ -130,9 +131,11 @@ class AsyncHTTPExecutor(object):
             if hasattr(e, 'response') and e.response:
                 fn_on_response(url, item, method, e.response, self.task_queue)
             else:
-                logger.error('Exception: %s %s %s' % (e, method, item))
+                msg = utf8(e.message).encode('utf-8')
+                logger.error('Exception: %s %s %s' % (msg, method, item))
         except Exception as e:
-            logger.error('Exception: %s %s %s' % (e, method, item))
+            msg = utf8(e.message).encode('utf-8')
+            logger.error('Exception: %s %s %s' % (msg, method, item))
 
     @gen.coroutine
     def fetch_url(self, fn_on_response):

@@ -20,7 +20,7 @@ import ipaddr
 
 # 把项目的目录加入的环境变量中，这样才可以导入 common.base
 sys.path.insert(1, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from common.base import read_dict, text_type
+from common.base import read_dict, text_type, utf8
 
 logger = logging.getLogger(__name__)
 # 最大并发数量
@@ -115,7 +115,7 @@ class AsyncHTTPExecutor(object):
                     ip_list = [text_type(t) for t in mask.iterhosts()]
                 else:
                     ip_list = [item]
-            except Exception as e:
+            except:
                 ip_list = []
 
             for t in ip_list:
@@ -206,7 +206,8 @@ class WebScanner(object):
             try:
                 f.write(data.encode('utf-8'))
             except Exception as e:
-                logger.error(e)
+                msg = utf8(e.message).encode('utf-8')
+                logger.error(msg)
 
     @gen.coroutine
     def run(self):
