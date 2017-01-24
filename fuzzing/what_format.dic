@@ -1,0 +1,23 @@
+#http://file-extension.net/seeker/
+#extension  ::  description ::  hexdump
+jpg ::  JFIF-EXIF JPEG Bitmap       ::  FF D8 FF
+png ::  Portable Network Graphics   ::  89 50 4E 47 
+zip ::  ZIP compressed archive      ::  50 4B 03 04
+7z  ::  7-Zip compressed archive    ::  37 7A BC AF 27 1C 
+gif ::  GIF Bitmap (generic)        ::  47 49 46 
+rar ::  RAR Archive                 ::  52 61 72 21 1A 
+exe ::   Executable File (Microsoft Corporation)    ::  4D 5A 90 00
+#mp3 ::  MP3 audio (ID3 v1.x tag)    ::  FF 
+mp3 ::  MP3 audio (ID3 v2.x tag)    ::  49 44 33 
+avi ::   AVI Audio Video Interleaved    ::  52 49 46 46 
+pyc ::   Python 2.7.x bytecode      ::  03 f3 0d 0a
+bmp ::   AWBM Award BIOS bitmap     :: 41 57 42 4D 
+bmp ::  Windows Bitmap      ::  42 4D 
+wav ::  RIFF/WAVe standard Audio    ::  52 49 46 46 
+doc/ppt/xls/msi ::   Microsoft Word document/Microsoft PowerPoint document/Microsoft Excel sheet/Microsoft Windows Installer    ::   D0 CF 11 E0 A1 B1 1A E1 
+dll ::   Win32 Dynamic Link Library - Borland C/C++ ::   4D 5A 50 00 02 00 00 00 04 00 0F 00 FF FF 00 00  
+psd ::   Adobe Photoshop image      ::  38 42 50 53 00 01 00 00 00 00 00 00 00 
+wmv ::  Windows Media (generic)     ::   30 26 B2 75 8E 66 CF 11 A6 D9 00 AA 00 62 CE 6C 
+flv ::  Flash Video     ::  46 4C 56 01 
+pdf ::   Adobe Portable Document Format ::  25 50 44 46 2D 
+pdf ::   GraphiCode Programmable Device Format   ::   AF 01 00 

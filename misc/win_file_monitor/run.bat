@@ -1,0 +1,1 @@
+python monitor.py -w D:\test1 -b D:\test_bk
